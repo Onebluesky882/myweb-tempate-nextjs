@@ -1,6 +1,3 @@
-import Draggable from "@/components/drag-drop";
-import TestAos from "@/components/testAos";
-
 type Post = {
   userId: number;
   id: number;
