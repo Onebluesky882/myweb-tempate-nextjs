@@ -19,8 +19,6 @@ export default async function Home() {
   const data = await getPost();
   return (
     <div className="overflow-scroll">
-      <TestAos />
-      <Draggable />
       {data.map((item) => (
         <pre key={item.id}>{item.title}</pre>
       ))}
