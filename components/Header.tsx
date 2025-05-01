@@ -3,11 +3,11 @@
 import { useEffect, useState } from "react";
 import { ModeToggle } from "./ModeToggle";
 import Image from "next/image";
-import logo from "/Dribbble-Logo.jpg";
+import { useToggleDrawer } from "@/app/store/useDrawerToggle";
 
 const Header = () => {
   const [scroll, setScroll] = useState(false);
-
+  const { toggleDrawer, setToggleDrawer } = useToggleDrawer();
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -30,15 +30,15 @@ const Header = () => {
     >
       <div className="col-span-1 gap-1 px-2  ">
         <Image
-          src={"/image/Dribbble-Logo.jpg"}
+          src={"/images/cherries.png"}
           alt={""}
-          width={100}
-          height={100}
+          width={50}
+          height={50}
           className="cursor-pointer"
         />
       </div>
       <div className="col-span-2 mt-1 items-center flex">
-        <InputElement />{" "}
+        <InputElement /> <button onClick={setToggleDrawer}>open drawer</button>
       </div>
       <div className="flex items-center gap-1 px-1  col-span-2   justify-end">
         <ButtonHeader /> <ModeToggle />{" "}
